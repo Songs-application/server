@@ -45,8 +45,9 @@ public class  SongsController {
     // Delete song by id
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public boolean deleteSongById(@PathVariable String id) {
-        return songsService.delete(id);
+    public String deleteSongById(@PathVariable String id) {
+         songsService.delete(id);
+        return id;
     }
 
     // Update song
